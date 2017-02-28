@@ -1,0 +1,15 @@
+footer {
+    padding: 32px 0;
+    color: #fff;
+    background-color: $gray-dark;
+
+    .brand {
+        color: #fff;
+
+        &:active,
+        &:focus,
+        &:hover {
+        color: #fff;
+        }
+    }
+}

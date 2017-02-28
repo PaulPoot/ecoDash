@@ -25,3 +25,29 @@ html {
 body {
   padding-top: 5em;
 }
+
+.brand {
+    color: $gray-dark;
+    font-size: 24px;
+    font-weight: 700;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $gray-dark;
+      text-decoration: none;
+    }
+
+    img {
+      height: 36px;
+    }
+
+    span {
+        color: $brand-primary;
+    }
+}
+
+.page {
+  margin-top: 88px;
+  margin-bottom: 88px;
+}

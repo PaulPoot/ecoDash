@@ -106,7 +106,10 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             #2d7f42 !default;
+$brand-primary-lighter:     #3cad4f !default;
+$brand-primary-darker:      #1d401f !default;
+$brand-darker-bg:           #d1e4d6 !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -122,7 +125,7 @@ $enable-rounded:            true !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        true !default;
-$enable-hover-media-query:  false !default;
+$enable-hover-media-query:  true !default;
 $enable-grid-classes:       true !default;
 $enable-print-styles:       true !default;
 
@@ -188,7 +191,7 @@ $inverse-color: $gray-lighter !default;
 
 $link-color:            $brand-primary !default;
 $link-decoration:       none !default;
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      $brand-primary-darker !default;
 $link-hover-decoration: underline !default;
 
 

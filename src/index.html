@@ -14,9 +14,18 @@
 
   <loader v-show="isLoading"></loader>
 
-  <div class="container">
+  <div class="page container">
     <router-view></router-view>
   </div>
+
+  <footer>
+    <div class="container">
+      <router-link class="brand" to="/">
+        <img alt="Brand" src="~assets/images/emblem.png" />
+        <span>eco</span>dash
+      </router-link>
+    </div>
+  </footer>
 </div>
 
 </body>
