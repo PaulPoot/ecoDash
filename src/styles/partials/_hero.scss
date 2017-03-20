@@ -1,0 +1,15 @@
+.hero {
+    display: flex;
+    width: 100vw;
+    height: 500px;
+    background-image: url("../../assets/images/bg.jpg");
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__title {
+    color: $white;
+    text-shadow: 0 4px rgba(0,0,0,0.2);
+
+}

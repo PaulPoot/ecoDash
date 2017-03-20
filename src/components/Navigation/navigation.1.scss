@@ -1,0 +1,16 @@
+nav.navbar {
+    padding: 32px 0;
+    background: #fff;
+    box-shadow: $element-box-shadow;
+}
+
+.navbar__toolbar {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    font-size: 20px;
+
+    .fa {
+        margin: 0 10px;
+    }
+}

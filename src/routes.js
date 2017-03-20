@@ -1,4 +1,5 @@
 import Home from 'components/Home/home';
+import Login from 'components/Login/login';
 import Posts from 'components/Posts/posts';
 import Post from 'components/Posts/post';
 import CreatePost from 'components/Posts/createPost';
@@ -28,6 +29,11 @@ const routes = [
     path: '/post/:id/edit',
     name: 'editPost',
     component: EditPost
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
   {
     path: '*',

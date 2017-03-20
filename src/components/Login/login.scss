@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.login {
+    display: flex;
+    margin-top: -8px;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background-image: url("../../assets/images/bg.jpg");
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    padding: 48px;
+    background: $white;
+    border-radius: $border-radius;
+    box-shadow: $element-box-shadow;
+
+    h1 {
+        margin-bottom: 48px;
+    }
+
+    .form-group {
+        .fa,
+        input {
+            display: inline-block;
+        }
+
+        input {
+            margin-left: 16px;
+            font-size: $font-size-lg;
+            vertical-align: -3px;
+            border: none;
+        }
+    }
+
+    .btn {
+        margin-top: 48px;
+        width: 100%;
+        cursor: pointer;
+    }
+}
