@@ -60,6 +60,12 @@ module.exports = {
         }]
       },
       {
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'velocity-animate',
+        test: /\.js?$/
+      },
+      {
         test: /\.css$/,
         include: path.resolve(__dirname, '../src'),
         loader: ExtractTextPlugin.extract({

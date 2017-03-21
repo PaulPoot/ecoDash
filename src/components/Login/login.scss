@@ -12,10 +12,13 @@
 }
 
 .login-form {
-    padding: 48px;
     background: $white;
     border-radius: $border-radius;
     box-shadow: $element-box-shadow;
+
+    .login-form__fields {
+        padding: 48px;
+    }
 
     h1 {
         margin-bottom: 48px;
@@ -36,8 +39,8 @@
     }
 
     .btn {
-        margin-top: 48px;
-        width: 100%;
+        margin: 0 48px 48px;
+        width: calc(100% - 96px);
         cursor: pointer;
     }
 }
