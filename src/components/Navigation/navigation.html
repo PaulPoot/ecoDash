@@ -1,17 +1,16 @@
 <nav class="navbar fixed-top navbar-toggleable-sm">
     <div class="container">
         <router-link class="brand" to="/">
-          <img alt="Brand" src="~assets/images/emblem.png" />
-          <span>eco</span>dash
+        <img alt="Brand" src="~assets/images/emblem.png" />
+        <span>eco</span>dash
         </router-link>
 
         <p class="navbar__toolbar">
-            <router-link to="/login">
-                <i class="fa fa-user"></i>
-            </router-link>
+            <i @click="showLoginForm = true" class="fa fa-user"></i>
             <router-link to="/">
                 <i class="fa fa-cog"></i>
             </router-link>
         </p>
     </div>
+    <login-form v-if="showLoginForm" @close="showLoginForm = false"></login-form>
 </nav>

@@ -1,20 +1,15 @@
 @import "../../styles/variables";
 
-.login {
-    display: flex;
-    margin-top: -8px;
-    width: 100vw;
-    height: calc(100vh - 70px);
-    background-image: url("../../assets/images/bg.jpg");
-    background-size: cover;
-    align-items: center;
-    justify-content: center;
-}
-
 .login-form {
     background: $white;
     border-radius: $border-radius;
     box-shadow: $element-box-shadow;
+
+    .login-form__close-button {
+        float: right;
+        margin: 24px 24px 0 0;
+        font-size: $font-size-lg;
+    }
 
     .login-form__fields {
         padding: 48px;

@@ -1,7 +1,8 @@
-<div class="login">
+<div class="modal-wrapper">
     <div class="login-form">
-        <form v-on:submit.prevent="doLogin" id="form">
+        <i @click="$emit('close')" class="fa fa-times login-form__close-button"></i>
 
+        <form @submit.prevent="doLogin" id="form">
             <div class="login-form__fields">
                 <h1>Login</h1>
                 <div class="form-group">
@@ -20,7 +21,10 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" v-on:click="login">Login</button>
+            <button type="submit" class="btn btn-primary" v-on:click="login">
+                <i v-if="loggingIn" class="fa fa-spinner fa-pulse"></i>
+                {{ loginText }}
+            </button>
         </form>
     </div>
 </div>
