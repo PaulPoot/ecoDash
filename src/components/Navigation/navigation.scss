@@ -6,7 +6,7 @@ nav.navbar {
     box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2);
 }
 
-.navbar__toolbar {
+.navbar-nav {
     position: absolute;
     top: 4px;
     right: 0;
@@ -15,4 +15,18 @@ nav.navbar {
     .fa {
         margin: 0 10px;
     }
+}
+
+.navbar-nav li {
+    margin-top: -10px;
+}
+
+.nav-link {
+    font-weight: 700;
+}
+
+.nav-link:active,
+.nav-link:hover,
+.nav-link:focus {
+    text-decoration: none;
 }

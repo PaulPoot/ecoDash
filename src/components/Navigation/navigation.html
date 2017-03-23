@@ -5,12 +5,22 @@
         <span>eco</span>dash
         </router-link>
 
-        <p class="navbar__toolbar">
-            <i @click="showLoginForm = true" class="fa fa-user"></i>
-            <router-link to="/">
-                <i class="fa fa-cog"></i>
-            </router-link>
-        </p>
+        <ul class="navbar-nav">
+            <li @click="showLoginForm = true"><a href="#" class="nav-link">Login</a></li>
+        </ul>
     </div>
-    <login-form v-if="showLoginForm" @close="showLoginForm = false"></login-form>
+    <transition
+        name="custom-classes-transition"
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+    >
+        <div v-if="showLoginForm" class="modal_background"></div>
+    </transition>
+    <transition
+        name="custom-classes-transition"
+        enter-active-class="animated slideInDown"
+        leave-active-class="animated slideOutUp"
+    >
+        <login-form v-if="showLoginForm" @close="showLoginForm = false"></login-form>
+    </transition>
 </nav>

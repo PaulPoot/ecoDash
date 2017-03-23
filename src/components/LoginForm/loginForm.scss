@@ -1,6 +1,7 @@
 @import "../../styles/variables";
 
 .login-form {
+    z-index: 1031; //thanks bootstrap;
     background: $white;
     border-radius: $border-radius;
     box-shadow: $element-box-shadow;
@@ -9,6 +10,11 @@
         float: right;
         margin: 24px 24px 0 0;
         font-size: $font-size-lg;
+    }
+
+    .login-form__close-button:hover {
+        color: $brand-primary;
+        cursor: pointer;
     }
 
     .login-form__fields {
