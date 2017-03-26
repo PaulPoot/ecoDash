@@ -1,0 +1,14 @@
+.diagonal-section {
+    padding-bottom: $edge-height;
+}
+
+.edge {
+    position: absolute;
+}
+
+.edge.bottom-right {
+    right: 0;      
+    bottom: 0;
+    width: 100%;       
+    height: $edge-height;
+}

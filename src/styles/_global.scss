@@ -49,6 +49,19 @@ body {
 }
 
 .page {
-  margin-top: 88px;
-  margin-bottom: 88px;
+    margin-top: 88px;
+    margin-bottom: 88px;
+}
+
+.fill-brand {
+    fill: $brand-primary;
+}
+
+.fill-white {
+    fill: $white;
+}
+
+.bgcolor-brand {
+    background-color: $brand-primary;
+    color: $white;
 }
