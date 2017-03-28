@@ -3,7 +3,7 @@
 nav.navbar {
     padding: 16px 0;
     background: $white;
-    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2);
+    box-shadow: $element-box-shadow;
 }
 
 .navbar-nav {
@@ -21,8 +21,11 @@ nav.navbar {
     margin-top: -10px;
 }
 
-.nav-link:active,
-.nav-link:hover,
-.nav-link:focus {
-    text-decoration: none;
+.nav-link {
+    margin-top: 5px;
+}
+
+.navbar .navbar-nav .nav-link.btn {
+    padding-right: 15px;
+    padding-left: 15px;
 }

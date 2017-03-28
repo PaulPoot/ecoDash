@@ -1,0 +1,17 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	<path fill="#FF3D00" d="M19,19v12c0,2.209,1.791,4,4,4s4-1.791,4-4V19H19z"></path>
+	<circle fill="#FF3D00" cx="23" cy="38" r="8"></circle>
+</g>
+<g>
+	<rect x="29" y="19" fill="#1565C0" width="4" height="2"></rect>
+	<rect x="29" y="23" fill="#1565C0" width="4" height="2"></rect>
+	<rect x="29" y="27" fill="#1565C0" width="4" height="2"></rect>
+</g>
+<path fill="#CFD8DC" d="M27,19V6c0-2.209-1.791-4-4-4s-4,1.791-4,4v13H27z"></path>
+<g>
+	<rect x="29" y="15" fill="#FF3D00" width="4" height="2"></rect>
+	<rect x="29" y="11" fill="#FF3D00" width="4" height="2"></rect>
+	<rect x="29" y="7" fill="#FF3D00" width="4" height="2"></rect>
+</g>
+</svg>

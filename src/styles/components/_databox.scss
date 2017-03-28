@@ -1,0 +1,36 @@
+.data-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    img {
+        display: inline-block;
+        margin-right: 8px;
+    }
+}
+
+.data-box__text-wrapper {
+    display: inline-block;
+    padding: 16px 32px;
+    margin-left: 8px;
+    color: $white;
+    background-color: $brand-primary;
+    border-radius: $border-radius;
+
+    p {
+        margin: 0;
+    }
+
+    &:after {
+        position: absolute;
+        bottom: 50px;
+        margin-left: -46px;
+        display: block;
+        width: 0;
+        content: "";
+        border-width: 20px 20px 20px 0;
+        border-style: solid;
+        border-color: transparent $brand-primary;
+    }
+}
