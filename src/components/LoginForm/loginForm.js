@@ -24,6 +24,9 @@ export default Vue.extend({
       this.loginText = loginText;
       this.loggingIn = loggingIn;
     },
+    toPage: function(route) {
+      this.$router.push(route);
+    },
     login: function(e) {
       this.updateButton('Logging in...', true);
 
@@ -38,6 +41,8 @@ export default Vue.extend({
         duration: 200,
         easing: 'easeInQuad',
       });
+
+      setTimeout(this.toPage('dashboard'), 400);
     }
   },
 });

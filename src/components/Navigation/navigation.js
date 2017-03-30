@@ -11,9 +11,26 @@ export default Vue.extend({
   },
   data: function() {
     var showLoginForm = false;
+    var isRaised = false;
 
     return {
       showLoginForm: showLoginForm,
+      isRaised: isRaised,
     };
+  },
+  methods: {
+    scrollHandler() {
+      if (window.scrollY === 0) {
+        this.isRaised = false;
+      } else {
+        this.isRaised = true;
+      }
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.scrollHandler);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.scrollHandler);
   }
 });
