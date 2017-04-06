@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-toggleable-sm">
+<nav v-bind:class="{ raised: isRaised }" class="navbar fixed-top navbar-toggleable-sm">
     <div class="container">
         <router-link class="brand" to="/">
         <img alt="Brand" src="~assets/images/emblem.png" />
