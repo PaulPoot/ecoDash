@@ -7,7 +7,6 @@ import Loader from 'components/Loader/Loader';
 
 Vue.use(VueRouter);
 
-import 'src/config/http';
 import routes from 'src/routes';
 import 'src/style.scss';
 

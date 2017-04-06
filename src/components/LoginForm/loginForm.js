@@ -2,6 +2,8 @@ import Vue from 'vue';
 import template from './loginForm.html';
 import './loginForm.scss';
 import Velocity from 'velocity-animate';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 
 export default Vue.extend({
   template,
@@ -38,6 +40,21 @@ export default Vue.extend({
         duration: 200,
         easing: 'easeInQuad',
       });
+
+      axios.post(API_BASE + '/token', this.user)
+       .then(response => {
+         console.log(response);
+
+         axios.get(API_BASE + '/users', {
+           headers: { 'Authorization': response.data }
+         })
+          .then(response2 => {
+            console.log(response2);
+          });
+       })
+       .catch(response => {
+         console.log(response);
+       });
     }
   },
 });
