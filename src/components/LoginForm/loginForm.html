@@ -5,6 +5,17 @@
         <form id="form">
             <div class="login-form__fields">
                 <h1>Login</h1>
+
+                <transition
+                    name="custom-classes-transition"
+                    enter-active-class="animated fadeIn"
+                    leave-active-class="animated fadeOut"
+                >
+                    <div v-if="error" class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                </transition>
+
                 <div class="form-group">
                     <span class="fa-stack">
                         <i class="fa fa-circle fa-stack-2x"></i>
@@ -21,10 +32,12 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" v-on:click="login">
-                <i v-if="loggingIn" class="fa fa-spinner fa-pulse"></i>
-                {{ loginText }}
-            </button>
+            <div class="login-form__button-wrapper">
+                <button type="submit" class="btn btn-primary" v-on:click="loginStart">
+                    <i v-if="loggingIn" class="fa fa-spinner fa-pulse"></i>
+                    {{ loginText }}
+                </button>
+            </div>
         </form>
     </div>
 </div>
