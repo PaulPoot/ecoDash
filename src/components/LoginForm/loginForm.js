@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import template from './loginForm.html';
-import './loginForm.scss';
 import Velocity from 'velocity-animate';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';

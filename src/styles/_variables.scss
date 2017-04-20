@@ -243,12 +243,12 @@ $grid-gutter-widths: (
 // Font, line-height, and color for body text, headings, and more.
 @font-face {
     font-family: Ubuntu;
-    src: url("../assets/fonts/Ubuntu-Regular.ttf");
+    src: url("assets/vendor/Ubuntu-Regular.ttf");
 }
 
 @font-face {
     font-family: Ubuntu Bold;
-    src: url("../assets/fonts/Ubuntu-Bold.ttf");
+    src: url("assets/vendor/Ubuntu-Bold.ttf");
 }
 
 $font-family-sans-serif: "Ubuntu", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
