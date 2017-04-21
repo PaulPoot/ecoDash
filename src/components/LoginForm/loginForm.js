@@ -27,11 +27,6 @@ export default Vue.extend({
       this.loginText = loginText;
       this.loggingIn = loggingIn;
     },
-
-    toPage: function(route) {
-      this.$router.push(route);
-    },
-
     loginStart: function(e) {
       this.updateButton('Logging in...', true);
 
@@ -60,17 +55,8 @@ export default Vue.extend({
       axios.post(API_BASE + '/token', this.user)
         .then(response => {
           this.$store.commit('updateToken', response.data);
-
-          axios.get(API_BASE + '/users', {
-            headers: { 'Authorization': response.data }
-          })
-            .then(response => {
-              console.log(response);
-            })
-            .catch(error => {
-              var self = this;
-              this.handleError(self, e, error);
-            });
+          this.$router.push('/dashboard');
+          this.$emit('close');
         })
         .catch(error => {
           var self = this;

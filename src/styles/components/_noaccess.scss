@@ -1,0 +1,14 @@
+.no-access {
+    display: flex;
+    height: calc(100vh - 173px);
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        max-width: 600px;
+    }
+
+    .btn {
+        margin-top: 24px;
+    }
+}

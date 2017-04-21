@@ -14,13 +14,7 @@
 
   <loader v-show="isLoading"></loader>
 
-  <transition
-    name="custom-classes-transition"
-    enter-active-class="animated fadeIn"
-    leave-active-class="animated fadeOut"
-  >
-    <router-view></router-view>
-  </transition>
+  <router-view></router-view>
 
   <footer>
     <div class="container">

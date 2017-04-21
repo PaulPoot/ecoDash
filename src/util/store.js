@@ -5,11 +5,12 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    token: null
+    showLoginForm: false,
+    token: null,
   },
   mutations: {
     updateToken(state, newToken) {
       state.token = newToken;
-    }
+    },
   }
 });

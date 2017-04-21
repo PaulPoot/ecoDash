@@ -1,5 +1,6 @@
 import Home from 'components/Home/home';
 import Dashboard from 'components/Dashboard/dashboard';
+import NoAccess from 'components/NoAccess/noAccess';
 import NotFound from 'components/NotFound/notFound';
 
 const routes = [
@@ -10,6 +11,10 @@ const routes = [
   {
     path: '/dashboard',
     component: Dashboard
+  },
+  {
+    path: '/no-access',
+    component: NoAccess
   },
   {
     path: '*',
