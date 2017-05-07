@@ -9,7 +9,7 @@ export default Vue.extend({
   },
   created: function() {
     console.log('dashboard: ' + this.$store.state.token);
-    if (this.$store.state.token === null) {
+    if (!Vue.ls.get('token')) {
       this.$router.push('/no-access');
     }
   }

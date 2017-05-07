@@ -1,0 +1,28 @@
+<div class="page-dashboard">
+  <div class="container">
+    <div class="row" v-for="node in nodes">
+      <div class="col-md">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+          <path fill="#4CAF50" d="M6,10c0-2.209,1.791-4,4-4h28c2.209,0,4,1.791,4,4v28c0,2.209-1.791,4-4,4H10c-2.209,0-4-1.791-4-4V10z"></path>
+          <g>
+            <polyline fill="none" stroke="#C8E6C9" stroke-width="2" points="24,13 24,25 36,20 	"></polyline>
+            <polyline fill="none" stroke="#C8E6C9" stroke-width="2" points="12,21 24,25 16,35 	"></polyline>
+            <line fill="none" stroke="#C8E6C9" stroke-width="2" x1="32" y1="35" x2="24" y2="25"></line>
+          </g>
+          <g>
+            <circle fill="#E8F5E9" cx="24" cy="13" r="3"></circle>
+            <circle fill="#E8F5E9" cx="36" cy="20" r="3"></circle>
+            <circle fill="#E8F5E9" cx="24" cy="25" r="5"></circle>
+            <circle fill="#E8F5E9" cx="12" cy="21" r="3"></circle>
+            <circle fill="#E8F5E9" cx="16" cy="35" r="3"></circle>
+            <circle fill="#E8F5E9" cx="32" cy="35" r="3"></circle>
+          </g>
+        </svg>
+      </div>
+      <div class="col-md">
+        <h3>{{ node.Name }}</h3>
+        <h6>{{ node.Type }}</h6>
+        <p>{{ node.Description }}</p>
+    </div>
+  </div>
+</div>

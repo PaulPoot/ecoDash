@@ -1,5 +1,7 @@
 import Home from 'components/Home/home';
 import Dashboard from 'components/Dashboard/dashboard';
+import DashboardNodes from 'components/DashboardNodes/dashboardNodes';
+import DashboardSensors from 'components/DashboardSensors/dashboardSensors';
 import NoAccess from 'components/NoAccess/noAccess';
 import NotFound from 'components/NotFound/notFound';
 
@@ -11,6 +13,14 @@ const routes = [
   {
     path: '/dashboard',
     component: Dashboard
+  },
+  {
+    path: '/dashboard/nodes',
+    component: DashboardNodes
+  },
+  {
+    path: '/dashboard/sensors',
+    component: DashboardSensors
   },
   {
     path: '/no-access',

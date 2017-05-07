@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VueLocalStorage from 'vue-ls';
 import { mapGetters, mapMutations } from 'vuex';
 import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
@@ -8,6 +9,9 @@ import Loader from 'components/Loader/Loader';
 import { store } from './util/store';
 
 Vue.use(Vuex);
+Vue.use(VueLocalStorage, {
+  namespace: 'vuejs__'
+});
 Vue.use(VueRouter);
 
 import routes from 'src/routes';
