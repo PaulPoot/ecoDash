@@ -8,6 +8,11 @@ export default Vue.extend({
   components: {
     LoginForm,
   },
+  computed: {
+    token: function() {
+      return Vue.ls.get('token');
+    }
+  },
   data: function() {
     var showLoginForm = false;
     var isRaised = false;
