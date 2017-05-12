@@ -8,3 +8,33 @@
     padding: 96px 0;
     background-color: $gray-lightest;
 }
+
+.page-dashboard.item-overview {
+    padding: 64px 0;
+}
+
+.page-dashboard.locations {
+    .col-md {
+        text-align: center;
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        p {
+            color: $black;
+        }
+    }
+}
+
+.page-dashboard.nodes {
+    .col-md {
+        a:hover {
+            text-decoration: none;
+        }
+
+        p {
+            color: $black;
+        }
+    }
+}

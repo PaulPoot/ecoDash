@@ -8,6 +8,7 @@
         <ul class="navbar-nav">
             <li v-if="token === null" @click="$store.state.showLoginForm = true"><a href="#" class="nav-link btn btn-primary">Login</a></li>
             <router-link to="/dashboard"><li v-if="token"><p class="btn btn-primary">Dashboard</p></li></router-link>
+            <router-link to="/dashboard/locations"><li v-if="token"><p class="btn btn-primary">Management</p></li></router-link>
             <li v-if="token"><a href="#" class="nav-link btn btn-primary">Logout</a></li>
         </ul>
     </div>

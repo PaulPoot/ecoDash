@@ -24,7 +24,7 @@ const routes = [
     component: DashboardNodes
   },
   {
-    path: '/dashboard/locations/:id/:nodeid',
+    path: '/dashboard/nodes/:nodeid',
     component: DashboardSensors
   },
   {

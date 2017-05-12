@@ -1,4 +1,4 @@
-<div class="page-dashboard">
+<div class="page-dashboard nodes item-overview">
   <div class="container" v-for="node in nodes">
     <div class="row">
       <div class="col-md">
@@ -20,7 +20,7 @@
         </svg>
       </div>
       <div class="col-md">
-        <h3>{{ node.Name }}</h3>
+        <router-link :to="'/dashboard/nodes/' + node.Id"><h3>{{ node.Name }}</h3></router-link>
         <h6>{{ node.Type }}</h6>
         <p>{{ node.Description }}</p>
     </div>

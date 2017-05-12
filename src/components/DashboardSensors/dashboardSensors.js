@@ -6,10 +6,8 @@ import { API_BASE } from 'src/config/constants';
 export default Vue.extend({
   template,
   data: function() {
-    var sensors = null;
-
     return {
-      sensors: sensors,
+      sensors: [],
     };
   },
   methods: {
@@ -19,7 +17,12 @@ export default Vue.extend({
           'Authorization': Vue.ls.get('token')
         } })
         .then(response => {
-          this.sensors = response.data;
+          for (var i = 0; i < response.data.length; i++) {
+            var sensor = response.data[i];
+            if (sensor.NodeId === this.$route.params.nodeid) {
+              this.sensors.push(sensor);
+            }
+          }
         })
         .catch(error => {
           console.log(error);
