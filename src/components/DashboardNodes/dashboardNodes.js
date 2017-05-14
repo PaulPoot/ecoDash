@@ -3,11 +3,13 @@ import template from './dashboardNodes.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
 import Navigation from '../Navigation/navigation';
+import DashboardNodesAdd from '../DashboardNodesAdd/dashboardNodesAdd';
 
 export default Vue.extend({
   template,
   components: {
     Navigation,
+    DashboardNodesAdd,
   },
   data: function() {
     return {

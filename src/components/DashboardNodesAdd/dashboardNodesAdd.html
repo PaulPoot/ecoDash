@@ -4,43 +4,38 @@
 
             <div class="row">
                 <div class="col-md">
-                    <h2>Add Sensor</h2>
+                    <h2>Add Node</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input id="SensorType" v-model="SensorType" type="text" placeholder="Sensor Type">
+                        <input id="Name" v-model="Name" type="text" placeholder="Name">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input id="ProductName" v-model="ProductName" type="text" placeholder="Product Name">
+                        <input id="Type" v-model="Type" type="text" placeholder="Type">
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <input id="Status" v-model="Status" type="number" placeholder="Status">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input id="Interval" v-model="Interval" type="number" placeholder="Interval">
+                        <textarea id="Description" v-model="Description" type="text" placeholder="Description">
                     </div>
                 </div>
             </div>
 
             <a v-if="!valid" class="btn btn-disabled">
-                Add sensor
+                Add node
             </a>
 
-            <button v-if="valid" type="submit" class="btn btn-primary" v-on:click="addSensor()">
-                Add sensor
+            <button v-if="valid" type="submit" class="btn btn-primary" v-on:click="addNode()">
+                Add node
             </button>
         </form>
     </div>

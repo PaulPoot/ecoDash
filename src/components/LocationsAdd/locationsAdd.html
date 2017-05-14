@@ -1,0 +1,36 @@
+<div class="container-fluid add-form">
+    <div class="container">
+        <form id="form">
+
+            <div class="row">
+                <div class="col-md">
+                    <h2>Add Location</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input id="Name" v-model="Name" type="text" placeholder="Name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea id="Description" v-model="Description" placeholder="Description">
+                    </div>
+                </div>
+            </div>
+
+            <a v-if="!valid" class="btn btn-disabled">
+                Add location
+            </a>
+
+            <button v-if="valid" type="submit" class="btn btn-primary" v-on:click="addLocation()">
+                Add location
+            </button>
+        </form>
+    </div>
+</div>

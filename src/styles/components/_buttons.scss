@@ -3,7 +3,7 @@
 }
 
 .btn-disabled {
-    color: $white;
+    color: $white !important;
     background-color: $gray-light;
     cursor: not-allowed;
 }
