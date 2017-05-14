@@ -9,11 +9,11 @@
     background-color: $gray-lightest;
 }
 
-.page-dashboard.item-overview {
+.page-dashboard .item-overview {
     padding: 64px 0;
 }
 
-.page-dashboard.locations {
+.page-dashboard .locations {
     .col-md {
         text-align: center;
 
@@ -27,7 +27,7 @@
     }
 }
 
-.page-dashboard.nodes {
+.page-dashboard .nodes {
     .col-md {
         a:hover {
             text-decoration: none;

@@ -1,3 +1,9 @@
 .btn {
     box-shadow: $element-box-shadow;
 }
+
+.btn-disabled {
+    color: $white;
+    background-color: $gray-light;
+    cursor: not-allowed;
+}

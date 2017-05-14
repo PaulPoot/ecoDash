@@ -1,9 +1,9 @@
 <section>
   <navigation></navigation>
 
-  <div class="page-dashboard sensors item-overview">
-    <div class="container">
-      <div class="row" v-for="sensor in sensors">
+  <div class="page-dashboard">
+    <div class="container sensors item-overview">
+      <div class="row" v-if="sensors.length > 0" v-for="sensor in sensors">
         <div class="col-md">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
             <path fill="#78909C" d="M6,21v10c0,2.209,1.791,4,4,4h28c2.209,0,4-1.791,4-4V21H6z"></path>
@@ -29,9 +29,15 @@
             <span v-if="sensor.Status === 1">Online</span>
             <span v-if="sensor.Status != 1">Offline</span>
           </p>
+        </div>
+      </div>
+      <div v-if="sensors.length < 1">
+        <div class="col-md-6">
+          <h2>It doesn't look like this node has any sensors connected to it yet.</h2>
+          <p>You can add new sensors using the form below.</p>
+        </div>
       </div>
     </div>
-
     <dashboard-sensors-add :node-id="$route.params.nodeid"></dashboard-sensors-add>
   </div>
 </section>
