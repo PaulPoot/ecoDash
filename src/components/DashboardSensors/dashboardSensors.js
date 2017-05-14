@@ -2,9 +2,15 @@ import Vue from 'vue';
 import template from './dashboardSensors.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
+import Navigation from '../Navigation/navigation';
+import DashboardSensorsAdd from '../DashboardSensorsAdd/dashboardSensorsAdd';
 
 export default Vue.extend({
   template,
+  components: {
+    Navigation,
+    DashboardSensorsAdd,
+  },
   data: function() {
     return {
       sensors: [],

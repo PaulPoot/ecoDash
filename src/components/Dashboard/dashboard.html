@@ -1,52 +1,56 @@
-<div class="page-dashboard">
-  <div class="container">
-    <div class="row dashboard-header">
-      <div class="col-md">
-        <div class="data-box">
-          <img src="../../assets/images/thermometer.svg" />
-          <div class="data-box__text-wrapper">
-            <h1>21°</h1>
-            <p>Temperature</p>
+<section>
+  <navigation></navigation>
+
+  <div class="page-dashboard">
+    <div class="container">
+      <div class="row dashboard-header">
+        <div class="col-md">
+          <div class="data-box">
+            <img src="../../assets/images/thermometer.svg" />
+            <div class="data-box__text-wrapper">
+              <h1>21°</h1>
+              <p>Temperature</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md">
-        <div class="data-box">
-          <img src="../../assets/images/moisture.svg" />
-          <div class="data-box__text-wrapper">
-            <h1>60%</h1>
-            <p>Humidity</p>
+        <div class="col-md">
+          <div class="data-box">
+            <img src="../../assets/images/moisture.svg" />
+            <div class="data-box__text-wrapper">
+              <h1>60%</h1>
+              <p>Humidity</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md">
-        <div class="data-box">
-          <img src="../../assets/images/sun.svg" />
-          <div class="data-box__text-wrapper">
-            <h1>10L</h1>
-            <p>Radiance</p>
+        <div class="col-md">
+          <div class="data-box">
+            <img src="../../assets/images/sun.svg" />
+            <div class="data-box__text-wrapper">
+              <h1>10L</h1>
+              <p>Radiance</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container-fluid dashboard-graphs">
+    <div class="container-fluid dashboard-graphs">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <demo-bar-chart></demo-bar-chart>
+          </div>
+          <div class="col-md">
+            <demo-bar-chart></demo-bar-chart>
+          </div>
+        </div>  
+      </div>
+    </div>
+
     <div class="container">
       <div class="row">
-        <div class="col-md">
-          <demo-bar-chart></demo-bar-chart>
-        </div>
-        <div class="col-md">
-          <demo-bar-chart></demo-bar-chart>
-        </div>
-      </div>  
+        <router-link to="/dashboard/locations" class="btn btn-primary">Nodes</router-link>
+      </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <router-link to="/dashboard/locations" class="btn btn-primary">Nodes</router-link>
-    </div>
-  </div>
-</div>
+</section>

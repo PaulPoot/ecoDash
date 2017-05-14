@@ -1,0 +1,41 @@
+<div class="add-form">
+    <form id="form">
+        <h1>Add Sensor</h1>
+
+        <div class="form-group">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <input id="SensorType" v-model="SensorType" type="text" placeholder="Sensor Type">
+        </div>
+
+        <div class="form-group">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <input id="ProductName" v-model="ProductName" type="text" placeholder="Product Name">
+        </div>
+
+        <div class="form-group">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <input id="Status" v-model="Status" type="number" placeholder="Status">
+        </div>
+
+        <div class="form-group">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <input id="Interval" v-model="Interval" type="number" placeholder="Interval">
+        </div>
+
+        <button v-if="valid" type="submit" class="btn btn-primary" v-on:click="addSensor()">
+            Add sensor
+        </button>
+    </form>
+</div>

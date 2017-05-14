@@ -29,6 +29,10 @@ export default Vue.extend({
       } else {
         this.isRaised = true;
       }
+    },
+    logout() {
+      Vue.ls.remove('token');
+      this.$router.push('/');
     }
   },
   created() {

@@ -1,31 +1,37 @@
-<div class="page-dashboard sensors item-overview">
-  <div class="container">
-    <div class="row" v-for="sensor in sensors">
-      <div class="col-md">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
-          <path fill="#78909C" d="M6,21v10c0,2.209,1.791,4,4,4h28c2.209,0,4-1.791,4-4V21H6z"></path>
-          <path fill="#455A64" d="M42,21c0,2.209-1.791,4-4,4H10c-2.209,0-4-1.791-4-4l3-11c0.623-1.933,1.791-4,4-4h22
-            c2.209,0,3.459,1.667,4,4L42,21z"></path>
-          <circle fill="#64DD17" cx="35" cy="30" r="2"></circle>
-          <g>
-            <rect x="23" y="35" fill="#B0BEC5" width="2" height="5"></rect>
-            <rect x="6" y="40" fill="#B0BEC5" width="36" height="2"></rect>
-          </g>
-          <g>
-            <circle fill="#FFEB3B" cx="12" cy="30" r="2"></circle>
-            <circle fill="#FFEB3B" cx="19" cy="30" r="2"></circle>
-          </g>
-          <path></path>
-        </svg>
+<section>
+  <navigation></navigation>
+
+  <div class="page-dashboard sensors item-overview">
+    <div class="container">
+      <div class="row" v-for="sensor in sensors">
+        <div class="col-md">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+            <path fill="#78909C" d="M6,21v10c0,2.209,1.791,4,4,4h28c2.209,0,4-1.791,4-4V21H6z"></path>
+            <path fill="#455A64" d="M42,21c0,2.209-1.791,4-4,4H10c-2.209,0-4-1.791-4-4l3-11c0.623-1.933,1.791-4,4-4h22
+              c2.209,0,3.459,1.667,4,4L42,21z"></path>
+            <circle fill="#64DD17" cx="35" cy="30" r="2"></circle>
+            <g>
+              <rect x="23" y="35" fill="#B0BEC5" width="2" height="5"></rect>
+              <rect x="6" y="40" fill="#B0BEC5" width="36" height="2"></rect>
+            </g>
+            <g>
+              <circle fill="#FFEB3B" cx="12" cy="30" r="2"></circle>
+              <circle fill="#FFEB3B" cx="19" cy="30" r="2"></circle>
+            </g>
+            <path></path>
+          </svg>
+        </div>
+        <div class="col-md">
+          <h3>{{ sensor.SensorType }}</h3>
+          <h6>{{ sensor.ProductName }}</h6>
+          <p>{{ sensor.Id }}</p>
+          <p>STATUS: 
+            <span v-if="sensor.Status === 1">Online</span>
+            <span v-if="sensor.Status != 1">Offline</span>
+          </p>
       </div>
-      <div class="col-md">
-        <h3>{{ sensor.SensorType }}</h3>
-        <h6>{{ sensor.ProductName }}</h6>
-        <p>{{ sensor.Id }}</p>
-        <p>STATUS: 
-          <span v-if="sensor.Status === 1">Online</span>
-          <span v-if="sensor.Status != 1">Offline</span>
-        </p>
     </div>
+
+    <dashboard-sensors-add :node-id="$route.params.nodeid"></dashboard-sensors-add>
   </div>
-</div>
+</section>

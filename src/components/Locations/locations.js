@@ -2,9 +2,13 @@ import Vue from 'vue';
 import template from './locations.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
+import Navigation from '../Navigation/navigation';
 
 export default Vue.extend({
   template,
+  components: {
+    Navigation,
+  },
   data: function() {
     return {
       dataRows: [],

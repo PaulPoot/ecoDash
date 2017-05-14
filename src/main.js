@@ -4,7 +4,6 @@ import VueLocalStorage from 'vue-ls';
 import { mapGetters, mapMutations } from 'vuex';
 import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
-import Navigation from 'components/Navigation/navigation';
 import Loader from 'components/Loader/Loader';
 import { store } from './util/store';
 
@@ -37,7 +36,6 @@ new Vue({
   store,
   router,
   components: {
-    Navigation,
     Loader
   },
 
