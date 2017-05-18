@@ -39,7 +39,6 @@ module.exports = {
         test: /\.js?$/
       },
       {
-        exclude: /node_modules/,
         loader: 'vue-loader',
         test: /\.vue$/
       },
@@ -114,7 +113,7 @@ module.exports = {
         query: {
           name: 'assets/vendor/[name].[ext]'
         }
-      }
+      },
     ]
   }
 };

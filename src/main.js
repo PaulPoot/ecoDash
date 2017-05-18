@@ -6,6 +6,16 @@ import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
 import Loader from 'components/Loader/Loader';
 import { store } from './util/store';
+import * as VueGoogleMaps from 'vue2-google-maps';
+import { MAPS_KEY } from 'src/config/constants';
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: MAPS_KEY,
+    v: '3.26',
+    // libraries: 'places', //// If you need to use place input
+  }
+});
 
 Vue.use(Vuex);
 Vue.use(VueLocalStorage, {

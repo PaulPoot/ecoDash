@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import template from './locations.html';
 import axios from 'axios';
-import { API_BASE, MAPS_KEY } from 'src/config/constants';
+import { API_BASE } from 'src/config/constants';
 import Navigation from '../Navigation/navigation';
 import LocationsAdd from '../LocationsAdd/locationsAdd';
 
@@ -14,6 +14,9 @@ export default Vue.extend({
   data: function() {
     return {
       dataRows: [],
+      mapOptions: {
+        disableDefaultUI: true,
+      }
     };
   },
   methods: {
