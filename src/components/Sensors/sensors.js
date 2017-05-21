@@ -1,32 +1,32 @@
 import Vue from 'vue';
-import template from './dashboardNodes.html';
+import template from './sensors.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
 import Navigation from '../Navigation/navigation';
-import DashboardNodesAdd from '../DashboardNodesAdd/dashboardNodesAdd';
+import SensorsAdd from './sensorsAdd/sensorsAdd';
 
 export default Vue.extend({
   template,
   components: {
     Navigation,
-    DashboardNodesAdd,
+    SensorsAdd,
   },
   data: function() {
     return {
-      nodes: [],
+      sensors: [],
     };
   },
   methods: {
-    getNodes: function() {
-      axios.get(API_BASE + '/nodes', {
+    getSensors: function() {
+      axios.get(API_BASE + '/sensors', {
         headers: {
           'Authorization': Vue.ls.get('token')
         } })
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
-            var location = response.data[i];
-            if (location.LocationId === this.$route.params.id) {
-              this.nodes.push(location);
+            var sensor = response.data[i];
+            if (sensor.NodeId === this.$route.params.nodeid) {
+              this.sensors.push(sensor);
             }
           }
         })
@@ -39,6 +39,6 @@ export default Vue.extend({
     if (!Vue.ls.get('token')) {
       this.$router.push('/no-access');
     }
-    this.getNodes();
+    this.getSensors();
   }
 });

@@ -14,16 +14,38 @@
 }
 
 .page-dashboard .locations {
-    .col-md {
-        text-align: center;
+    .row {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
 
-        a:hover {
-            text-decoration: none;
-        }
+    .row > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        p {
-            color: $black;
+    .row > div:nth-child(2) {
+        display: block;
+    }
+
+    .row:hover {
+        background-color: $gray-lighter;
+        text-align: left;
+        cursor: pointer;
+
+        h2 {
+            color: $brand-primary;
+            transition: $default-transition;
         }
+    }
+
+    .highlight {
+        color: $brand-primary;
+    }
+
+    .fa-times:hover {
+        color: $brand-danger;
     }
 }
 

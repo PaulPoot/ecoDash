@@ -26,14 +26,15 @@
           <router-link :to="'/dashboard/nodes/' + node.Id"><h3>{{ node.Name }}</h3></router-link>
           <h6>{{ node.Type }}</h6>
           <p>{{ node.Description }}</p>
+        </div>
+      </div>
+      <div v-if="nodes.length < 1">
+          <div class="col-md-6">
+            <h2>It doesn't look like this location has any nodes connected to it yet.</h2>
+            <p>You can add new nodes using the form below.</p>
+          </div>
       </div>
     </div>
-    <div v-if="nodes.length < 1">
-        <div class="col-md-6">
-          <h2>It doesn't look like this location has any nodes connected to it yet.</h2>
-          <p>You can add new nodes using the form below.</p>
-        </div>
-    </div>
+    <nodes-add :location-id="$route.params.id"></nodes-add>
   </div>
-  <dashboard-nodes-add :location-id="$route.params.id"></dashboard-nodes-add>
 </section>
