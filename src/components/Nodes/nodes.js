@@ -2,7 +2,7 @@ import Vue from 'vue';
 import template from './nodes.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
-import NodesAdd from './nodesAdd/nodesAdd';
+import NodesAdd from './NodesAdd/nodesAdd';
 
 export default Vue.extend({
   template,

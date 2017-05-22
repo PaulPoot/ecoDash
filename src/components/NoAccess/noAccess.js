@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import template from './noAccess.html';
-import Navigation from '../navigation/navigation';
+import Navigation from '../Navigation/navigation';
 
 export default Vue.extend({
   template,

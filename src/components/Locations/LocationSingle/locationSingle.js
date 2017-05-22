@@ -2,10 +2,10 @@ import Vue from 'vue';
 import template from './locationSingle.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
-import Navigation from '../../navigation/navigation';
-import LocationEdit from './locationEdit/locationEdit';
-import Nodes from '../../nodes/nodes';
-import NodesAdd from '../../nodes/nodesAdd/nodesAdd';
+import Navigation from '../../Navigation/navigation';
+import LocationEdit from './LocationEdit/locationEdit';
+import Nodes from '../../Nodes/nodes';
+import NodesAdd from '../../Nodes/NodesAdd/nodesAdd';
 
 export default Vue.extend({
   template,
@@ -25,7 +25,7 @@ export default Vue.extend({
   },
   methods: {
     getLocation: function() {
-      axios.get(API_BASE + '/locations/' + this.$route.params.id, {
+      axios.get(API_BASE + '/locations/' + this.$route.params.locationid, {
         headers: {
           'Authorization': Vue.ls.get('token')
         } })

@@ -1,10 +1,10 @@
-import Home from 'components/home/home';
-import Dashboard from 'components/dashboard/dashboard';
-import Locations from 'components/locations/locations';
-import LocationSingle from 'components/locations/locationSingle/locationSingle';
-import Sensors from 'components/sensors/sensors';
-import NoAccess from 'components/noAccess/noAccess';
-import NotFound from 'components/notFound/notFound';
+import Home from 'components/Home/home';
+import Dashboard from 'components/Dashboard/dashboard';
+import Locations from 'components/Locations/locations';
+import LocationSingle from 'components/Locations/locationSingle/locationSingle';
+import NodeSingle from 'components/Nodes/NodeSingle/nodeSingle';
+import NoAccess from 'components/NoAccess/noAccess';
+import NotFound from 'components/NotFound/notFound';
 
 const routes = [
   {
@@ -20,12 +20,12 @@ const routes = [
     component: Locations
   },
   {
-    path: '/dashboard/locations/:id',
+    path: '/dashboard/locations/:locationid',
     component: LocationSingle
   },
   {
-    path: '/dashboard/nodes/:nodeid',
-    component: Sensors
+    path: '/dashboard/locations/:locationid/:nodeid',
+    component: NodeSingle
   },
   {
     path: '/no-access',

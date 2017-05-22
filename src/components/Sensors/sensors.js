@@ -2,15 +2,10 @@ import Vue from 'vue';
 import template from './sensors.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
-import Navigation from '../navigation/navigation';
-import SensorsAdd from './sensorsAdd/sensorsAdd';
 
 export default Vue.extend({
   template,
-  components: {
-    Navigation,
-    SensorsAdd,
-  },
+  props: ['nodeId'],
   data: function() {
     return {
       sensors: [],
@@ -25,7 +20,8 @@ export default Vue.extend({
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
             var sensor = response.data[i];
-            if (sensor.NodeId === this.$route.params.nodeid) {
+            console.log(sensor.NodeId + ' - ' + this.nodeId);
+            if (sensor.NodeId === this.nodeId) {
               this.sensors.push(sensor);
             }
           }
@@ -36,9 +32,6 @@ export default Vue.extend({
     }
   },
   created: function() {
-    if (!Vue.ls.get('token')) {
-      this.$router.push('/no-access');
-    }
     this.getSensors();
   }
 });

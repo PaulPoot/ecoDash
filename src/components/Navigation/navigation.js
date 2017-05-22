@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import template from './navigation.html';
 
-import LoginForm from 'components/loginForm/loginForm';
+import LoginForm from 'components/LoginForm/loginForm';
 
 export default Vue.extend({
   template,

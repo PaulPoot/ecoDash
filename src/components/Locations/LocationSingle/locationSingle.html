@@ -32,7 +32,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <nodes :location-id="$route.params.id"></nodes>
+          <nodes :location-id="$route.params.locationid"></nodes>
         </div>
         <div class="col-md">
           <location-edit :location="location"></location-edit>
@@ -40,6 +40,6 @@
       </div>
     </div>
 
-    <nodes-add :location-id="$route.params.id"></nodes-add>
+    <nodes-add :location-id="$route.params.locationid"></nodes-add>
   </div>
 </section>

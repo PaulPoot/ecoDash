@@ -1,0 +1,28 @@
+<section>
+  <navigation></navigation>
+
+  <div class="page-dashboard">
+    <div v-if="node" class="container">
+      <div class="row">
+        <div class="col-md">
+          <h1>{{ node.Name }}</h1>
+          <h6>{{ node.Type }}</h6>
+          <p>{{ node.Description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <sensors :node-id="$route.params.nodeid"></sensors>
+        </div>
+        <div class="col-md">
+          <node-edit :node="node"></node-edit>
+        </div>
+      </div>
+    </div>
+
+    <sensors-add :node-id="$route.params.nodeid"></sensors-add>
+  </div>
+</section>

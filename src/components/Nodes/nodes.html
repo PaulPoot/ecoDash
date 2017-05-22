@@ -19,7 +19,7 @@
       </svg>
     </div>
     <div class="col-md">
-      <router-link :to="'/dashboard/nodes/' + node.Id"><h3>{{ node.Name }}</h3></router-link>
+      <router-link :to="'/dashboard/locations/' + locationId + '/' + node.Id"><h3>{{ node.Name }}</h3></router-link>
       <h6>{{ node.Type }}</h6>
       <p>{{ node.Description }}</p>
     </div>
