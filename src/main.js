@@ -4,7 +4,7 @@ import VueLocalStorage from 'vue-ls';
 import { mapGetters, mapMutations } from 'vuex';
 import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
-import Loader from 'components/Loader/Loader';
+import Loader from 'components/loader/loader';
 import { store } from './util/store';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import { MAPS_KEY } from 'src/config/constants';

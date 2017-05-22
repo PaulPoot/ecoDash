@@ -2,8 +2,8 @@ import Vue from 'vue';
 import template from './locations.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
-import Navigation from '../Navigation/navigation';
-import LocationsAdd from './LocationsAdd/locationsAdd';
+import Navigation from '../navigation/navigation';
+import LocationsAdd from './locationsAdd/locationsAdd';
 
 export default Vue.extend({
   template,
@@ -48,7 +48,6 @@ export default Vue.extend({
             .catch(error => {
               console.log(error);
             });
-          console.log(this.locations[0]);
         })
         .catch(error => {
           console.log(error);
@@ -58,19 +57,6 @@ export default Vue.extend({
     viewLocation: function(location) {
       this.$router.push('/dashboard/locations/' + location.Id);
     },
-
-    deleteLocation: function(location) {
-      axios.delete(API_BASE + '/locations/' + location.Id, { headers: {
-        'Authorization': Vue.ls.get('token')
-      } })
-        .then(response => {
-          console.log(response);
-          this.getLocations();
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
   },
   created: function() {
     if (!Vue.ls.get('token')) {

@@ -1,4 +1,4 @@
-.add-form {
+.crud-form {
     padding: 48px 0;
     background-color: $gray-lighter;
 
@@ -12,5 +12,20 @@
         padding: 8px 16px;
         border: 0;
         border-radius: 8px;
+    }
+}
+
+.edit-form {
+    @extend .crud-form;
+    background-color: $white;
+
+    .container-fluid,
+    .container {
+        padding: 0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        background-color: $gray-lighter;
     }
 }

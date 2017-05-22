@@ -9,8 +9,33 @@
     background-color: $gray-lightest;
 }
 
-.page-dashboard .item-overview {
-    padding: 64px 0;
+.page-dashboard {
+    h1 {
+        margin-top: 24px;
+    }
+
+    .item-overview {
+        padding: 64px 15px;
+    }
+
+    .gmnoprint,
+    .gm-style-cc,
+    .gm-style a img {
+        display: none;
+    }
+
+    .fa {
+        margin-left: 8px;
+        transition: $default-transition;
+    }
+
+    .fa-times:hover {
+        color: $brand-danger;
+    }
+
+    .fa-pencil:hover {
+        color: $brand-warning;
+    }
 }
 
 .page-dashboard .locations {
@@ -42,13 +67,12 @@
     .highlight {
         color: $brand-primary;
     }
-
-    .fa-times:hover {
-        color: $brand-danger;
-    }
 }
 
 .page-dashboard .nodes {
+    padding-right: 0;
+    padding-left: 0;
+
     .col-md {
         a:hover {
             text-decoration: none;

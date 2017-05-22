@@ -1,5 +1,26 @@
 .btn {
     box-shadow: $element-box-shadow;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn-transparent {
+    background: transparent;
+    box-shadow: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:hover {
+        color: $brand-primary;
+    }
+
+    &.btn-transparent-danger:hover {
+        color: $brand-danger;
+    }
 }
 
 .btn-disabled {

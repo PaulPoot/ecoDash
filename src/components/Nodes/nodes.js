@@ -2,22 +2,17 @@ import Vue from 'vue';
 import template from './nodes.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
-import Navigation from '../Navigation/navigation';
 import NodesAdd from './nodesAdd/nodesAdd';
 
 export default Vue.extend({
   template,
   components: {
-    Navigation,
     NodesAdd,
   },
+  props: ['locationId'],
   data: function() {
     return {
       nodes: [],
-      location: null,
-      mapOptions: {
-        disableDefaultUI: true,
-      }
     };
   },
   methods: {
@@ -28,9 +23,9 @@ export default Vue.extend({
         } })
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
-            var location = response.data[i];
-            if (location.LocationId === this.$route.params.id) {
-              this.nodes.push(location);
+            var node = response.data[i];
+            if (node.LocationId === this.locationId) {
+              this.nodes.push(node);
             }
           }
         })
@@ -38,24 +33,8 @@ export default Vue.extend({
           console.log(error);
         });
     },
-    getLocation: function() {
-      axios.get(API_BASE + '/locations/' + this.$route.params.id, {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
-        .then(response => {
-          this.location = response.data;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
   },
   created: function() {
-    if (!Vue.ls.get('token')) {
-      this.$router.push('/no-access');
-    }
-    this.getLocation();
     this.getNodes();
   }
 });

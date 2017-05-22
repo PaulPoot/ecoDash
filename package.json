@@ -37,6 +37,7 @@
     "vue-router": "^2.0.1",
     "vue-template-compiler": "^2.3.3",
     "vue2-google-maps": "^0.7.5",
+    "vuedals": "^1.2.0",
     "vuex": "^2.2.1"
   },
   "devDependencies": {

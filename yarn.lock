@@ -7359,13 +7359,15 @@ vue2-google-maps@^0.7.5:
     babel-runtime "^5.8.0"
     marker-clusterer-plus "^2.1.4"
 
-vue@^2.2.5:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.2.6.tgz#451714b394dd6d4eae7b773c40c2034a59621aed"
-
-vue@^2.3.3:
+vue@^2.1.10, vue@^2.2.5, vue@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.3.3.tgz#d1eaa8fde5240735a4563e74f2c7fead9cbb064c"
+
+vuedals@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vuedals/-/vuedals-1.2.0.tgz#c2ca7f90ab9a61043428ed2757d5c535a92cf434"
+  dependencies:
+    vue "^2.1.10"
 
 vuex@^2.2.1:
   version "2.2.1"

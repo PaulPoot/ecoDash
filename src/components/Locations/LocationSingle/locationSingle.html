@@ -1,0 +1,45 @@
+<section>
+  <navigation></navigation>
+
+  <div class="page-dashboard">
+    <div v-if="location && location.GeoCoordinates.Latitude && location.GeoCoordinates.Longitude" class="container-fluid">
+      <div class="row">
+        <gmap-map
+          :center="{lat: location.GeoCoordinates.Latitude, lng: location.GeoCoordinates.Longitude}"
+          :zoom="12"
+          :options="mapOptions"
+          map-type-id="terrain"
+          style="width: 100%; height: 300px;"
+        >
+          <gmap-marker
+            :position="{lat: location.GeoCoordinates.Latitude, lng: location.GeoCoordinates.Longitude}"
+            :clickable="false"
+            :draggable="false"
+          ></gmap-marker>
+        </gmap-map>
+      </div>
+    </div>
+
+    <div v-if="location" class="container">
+      <div class="row">
+        <div class="col-md">
+          <h1>{{ location.Name }}</h1>
+          <p>{{ location.Description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <nodes :location-id="$route.params.id"></nodes>
+        </div>
+        <div class="col-md">
+          <location-edit :location="location"></location-edit>
+        </div>
+      </div>
+    </div>
+
+    <nodes-add :location-id="$route.params.id"></nodes-add>
+  </div>
+</section>

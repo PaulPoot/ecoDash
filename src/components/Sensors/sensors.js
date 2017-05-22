@@ -2,7 +2,7 @@ import Vue from 'vue';
 import template from './sensors.html';
 import axios from 'axios';
 import { API_BASE } from 'src/config/constants';
-import Navigation from '../Navigation/navigation';
+import Navigation from '../navigation/navigation';
 import SensorsAdd from './sensorsAdd/sensorsAdd';
 
 export default Vue.extend({
