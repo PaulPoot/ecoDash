@@ -27,8 +27,10 @@ export default Vue.extend({
       var location = {
         Name: this.Name,
         Description: this.Description,
-        Latitude: this.Latitude,
-        Longitude: this.Longitude,
+        GeoCoordinates: {
+          Latitude: this.Latitude,
+          Longitude: this.Longitude,
+        },
       };
 
       axios.post(API_BASE + '/locations', location, {

@@ -14,6 +14,10 @@ export default Vue.extend({
   data: function() {
     return {
       nodes: [],
+      location: null,
+      mapOptions: {
+        disableDefaultUI: true,
+      }
     };
   },
   methods: {
@@ -33,12 +37,25 @@ export default Vue.extend({
         .catch(error => {
           console.log(error);
         });
-    }
+    },
+    getLocation: function() {
+      axios.get(API_BASE + '/locations/' + this.$route.params.id, {
+        headers: {
+          'Authorization': Vue.ls.get('token')
+        } })
+        .then(response => {
+          this.location = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
   },
   created: function() {
     if (!Vue.ls.get('token')) {
       this.$router.push('/no-access');
     }
+    this.getLocation();
     this.getNodes();
   }
 });
