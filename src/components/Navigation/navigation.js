@@ -23,6 +23,7 @@ export default Vue.extend({
     };
   },
   methods: {
+    // Function that enables drop shadow on navbar when scrolled
     scrollHandler() {
       if (window.scrollY === 0) {
         this.isRaised = false;

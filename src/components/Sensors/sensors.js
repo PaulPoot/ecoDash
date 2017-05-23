@@ -20,7 +20,6 @@ export default Vue.extend({
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
             var sensor = response.data[i];
-            console.log(sensor.NodeId + ' - ' + this.nodeId);
             if (sensor.NodeId === this.nodeId) {
               this.sensors.push(sensor);
             }

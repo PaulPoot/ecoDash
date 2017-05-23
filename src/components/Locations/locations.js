@@ -34,6 +34,7 @@ export default Vue.extend({
             this.locations.push(location);
           }
 
+          // Get nodes and count how many nodes every location has.
           axios.get(API_BASE + '/nodes', options)
             .then(response => {
               for (var node in response.data) {
