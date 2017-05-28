@@ -3,6 +3,7 @@ import Dashboard from 'components/Dashboard/dashboard';
 import Locations from 'components/Locations/locations';
 import LocationSingle from 'components/Locations/locationSingle/locationSingle';
 import NodeSingle from 'components/Nodes/NodeSingle/nodeSingle';
+import SensorSingle from 'components/Sensors/SensorSingle/sensorSingle';
 import NoAccess from 'components/NoAccess/noAccess';
 import NotFound from 'components/NotFound/notFound';
 
@@ -26,6 +27,10 @@ const routes = [
   {
     path: '/dashboard/locations/:locationid/:nodeid',
     component: NodeSingle
+  },
+  {
+    path: '/dashboard/locations/:locationid/:nodeid/:sensorid',
+    component: SensorSingle
   },
   {
     path: '/no-access',

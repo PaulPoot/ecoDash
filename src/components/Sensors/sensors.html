@@ -1,5 +1,5 @@
 <div class="container sensors item-overview">
-  <div class="row" v-if="sensors.length > 0" v-for="sensor in sensors">
+  <div class="row" v-if="sensors.length > 0" v-for="sensor in sensors" @click="openSensor(sensor)">
     <div class="col-md">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
         <path fill="#78909C" d="M6,21v10c0,2.209,1.791,4,4,4h28c2.209,0,4-1.791,4-4V21H6z"></path>

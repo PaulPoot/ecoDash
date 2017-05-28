@@ -28,6 +28,10 @@ export default Vue.extend({
         .catch(error => {
           console.log(error);
         });
+    },
+
+    openSensor: function(sensor) {
+      this.$router.push('/dashboard/locations/' + this.$route.params.locationid + '/' + this.$route.params.nodeid + '/' + sensor.Id);
     }
   },
   created: function() {

@@ -1,0 +1,56 @@
+<section>
+  <navigation></navigation>
+
+  <div class="page-dashboard">
+    <div v-if="sensor" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>{{ sensor.SensorType }}</h1>
+          <h6>{{ sensor.ProductName }}</h6>
+          <p>Status: {{ sensor.Status }} - Interval: {{ sensor.Interval }}</p>
+        </div>
+
+        <div class="col-md">
+          <div class="edit-form" v-if="sensor">
+            <h2>Edit this sensor</h2>
+
+            <div v-if="success == true" class="alert alert-success">
+                Your changes have been saved.
+            </div>
+
+            <div v-if="success == false" class="alert alert-danger">
+                This sensor couldn't be updated. Please refresh this page.
+            </div>
+
+            <div class="form-group">
+                <input id="SensorType" v-model="sensor.SensorType" type="text" placeholder="Sensor Type" >
+            </div>
+            <div class="form-group">
+                <input id="ProductName" v-model="sensor.ProductName" type="text" placeholder="Product Name">
+            </div>
+            <div class="form-group">
+                <input id="Status" v-model="sensor.Status" type="text" placeholder="Status" >
+            </div>
+            <div class="form-group">
+                <input id="Interval" v-model="sensor.Interval" type="text" placeholder="Interval">
+            </div>
+
+            <p>
+                <a v-if="!valid" class="btn btn-disabled">
+                    Edit sensor
+                </a>
+
+                <button v-if="valid" type="submit" class="btn btn-primary" @click="updateSensor()">
+                    Edit sensor
+                </button>
+
+                <button class="btn btn-transparent btn-transparent-danger" @click="deleteSensor()">
+                    Delete sensor
+                </button>
+            </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
