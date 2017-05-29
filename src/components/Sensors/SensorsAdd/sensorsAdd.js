@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import template from './sensorsAdd.html';
-import axios from 'axios';
-import { API_BASE } from 'src/config/constants';
+import { sensorsResource } from 'src/util/resources';
 
 export default Vue.extend({
   template,
@@ -39,10 +38,7 @@ export default Vue.extend({
         Interval: this.Interval,
       };
 
-      axios.post(API_BASE + '/sensors', sensor, {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+      sensorsResource.post('/', sensor)
         .then(response => {
           console.log(response);
         })

@@ -55,6 +55,7 @@ export default Vue.extend({
       axios.post(API_BASE + '/token', this.user)
         .then(response => {
           Vue.ls.set('token', response.data, 10 * 60 * 1000); // set token to expire in 10 minutes
+          axios.defaults.headers.common.Authorization = response.data;
           this.$router.push('/dashboard');
           this.$emit('close');
         })

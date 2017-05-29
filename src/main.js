@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
 import Loader from 'components/loader/loader';
 import { store } from './util/store';
+import axios from 'axios';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import { MAPS_KEY } from 'src/config/constants';
 
@@ -59,5 +60,6 @@ new Vue({
     LoadingState.$on('toggle', (isLoading) => {
       this.isLoading = isLoading;
     });
+    axios.defaults.headers.common.Authorization = Vue.ls.get('token');
   }
 }).$mount('#app');

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import template from './nodeSingle.html';
-import axios from 'axios';
-import { API_BASE } from 'src/config/constants';
+import { nodesResource } from 'src/util/resources';
 import Navigation from '../../Navigation/navigation';
 import Sensors from '../../Sensors/sensors';
 import SensorsAdd from '../../Sensors/SensorsAdd/sensorsAdd';
@@ -22,10 +21,7 @@ export default Vue.extend({
   },
   methods: {
     getNode: function() {
-      axios.get(API_BASE + '/nodes/' + this.$route.params.nodeid, {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+      nodesResource.get('/' + this.$route.params.nodeid)
         .then(response => {
           this.node = response.data;
         })

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import template from './locationSingle.html';
-import axios from 'axios';
-import { API_BASE } from 'src/config/constants';
+import { locationsResource } from 'src/util/resources';
 import Navigation from '../../Navigation/navigation';
 import LocationEdit from './LocationEdit/locationEdit';
 import Nodes from '../../Nodes/nodes';
@@ -25,10 +24,7 @@ export default Vue.extend({
   },
   methods: {
     getLocation: function() {
-      axios.get(API_BASE + '/locations/' + this.$route.params.locationid, {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+      locationsResource.get('/' + this.$route.params.locationid)
         .then(response => {
           var location = response.data;
           if (!location.GeoCoordinates) {

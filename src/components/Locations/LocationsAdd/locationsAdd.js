@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import template from './locationsAdd.html';
-import axios from 'axios';
-import { API_BASE } from 'src/config/constants';
+import { locationsResource } from 'src/util/resources';
 
 export default Vue.extend({
   template,
@@ -33,10 +32,7 @@ export default Vue.extend({
         },
       };
 
-      axios.post(API_BASE + '/locations', location, {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+      locationsResource.post('/', location)
         .then(response => {
           console.log(response);
         })
