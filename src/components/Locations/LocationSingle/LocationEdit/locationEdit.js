@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './locationEdit.html';
-import { locationsResource } from 'src/util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 
 export default Vue.extend({
   template,
@@ -24,7 +25,7 @@ export default Vue.extend({
       if (window.confirm('Are you sure you want to make these changes?')) {
         this.success = null;
 
-        locationsResource.put('/', this.location)
+        axios.put(API_BASE + '/locations', this.location)
           .then(response => {
             console.log(response);
             this.success = true;
@@ -38,7 +39,9 @@ export default Vue.extend({
 
     deleteLocation: function() {
       if (window.confirm('Are you sure you want to delete this location?')) {
-        locationsResource.delete('/' + this.location.Id)
+        axios.delete(API_BASE + '/locations/' + this.location.Id, { headers: {
+          'Authorization': Vue.ls.get('token')
+        } })
           .then(response => {
             console.log(response);
             this.$router.push('/dashboard/locations');

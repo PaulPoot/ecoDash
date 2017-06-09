@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './nodesAdd.html';
-import { nodesResource } from 'src/util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 
 export default Vue.extend({
   template,
@@ -33,7 +34,7 @@ export default Vue.extend({
         Type: this.Type,
       };
 
-      nodesResource.post('/', node)
+      axios.post(API_BASE + '/nodes', node)
         .then(response => {
           console.log(response);
         })

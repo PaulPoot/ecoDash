@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './nodeEdit.html';
-import { nodesResource } from 'src/util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 
 export default Vue.extend({
   template,
@@ -27,7 +28,7 @@ export default Vue.extend({
       if (window.confirm('Are you sure you want to make these changes?')) {
         this.success = null;
 
-        nodesResource.put('/', this.node)
+        axios.put(API_BASE + '/nodes', this.node)
           .then(response => {
             console.log(response);
             this.success = true;
@@ -41,7 +42,9 @@ export default Vue.extend({
 
     deleteNode: function() {
       if (window.confirm('Are you sure you want to delete this node?')) {
-        nodesResource.delete('/' + this.node.Id)
+        axios.delete(API_BASE + '/nodes/' + this.node.Id, { headers: {
+          'Authorization': Vue.ls.get('token')
+        } })
           .then(response => {
             console.log(response);
             this.$router.push('/dashboard/locations/' + this.$route.params.locationid);

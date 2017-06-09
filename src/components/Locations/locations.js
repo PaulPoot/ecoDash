@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './locations.html';
-import { locationsResource, nodesResource } from '../../util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 import Navigation from '../Navigation/navigation';
 import LocationsAdd from './LocationsAdd/locationsAdd';
 
@@ -22,7 +23,7 @@ export default Vue.extend({
     getLocations: function() {
       this.locations = [];
 
-      locationsResource.get('/')
+      axios.get(API_BASE + '/locations')
         .then(response => {
           for (let location of response.data) {
             location.NodeCount = 0;
@@ -30,7 +31,7 @@ export default Vue.extend({
           }
 
           // Get nodes and count how many nodes every location has.
-          nodesResource.get('/')
+          axios.get(API_BASE + '/nodes')
             .then(response => {
               for (var node in response.data) {
                 for (var location in this.locations) {

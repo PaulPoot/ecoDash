@@ -1,5 +1,4 @@
 import Home from 'components/Home/home';
-import Dashboard from 'components/Dashboard/dashboard';
 import Locations from 'components/Locations/locations';
 import LocationSingle from 'components/Locations/locationSingle/locationSingle';
 import NodeSingle from 'components/Nodes/NodeSingle/nodeSingle';
@@ -14,7 +13,7 @@ const routes = [
   },
   {
     path: '/dashboard',
-    component: Dashboard
+    component: Locations
   },
   {
     path: '/dashboard/locations',

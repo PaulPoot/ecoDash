@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './sensorSingle.html';
-import { sensorsResource } from 'src/util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 import Navigation from '../../Navigation/navigation';
 
 export default Vue.extend({
@@ -31,7 +32,10 @@ export default Vue.extend({
   },
   methods: {
     getSensor: function() {
-      sensorsResource.get('/' + this.$route.params.sensorid)
+      axios.get(API_BASE + '/sensors/' + this.$route.params.sensorid, {
+        headers: {
+          'Authorization': Vue.ls.get('token')
+        } })
         .then(response => {
           this.sensor = response.data;
         })
@@ -44,7 +48,10 @@ export default Vue.extend({
       if (window.confirm('Are you sure you want to make these changes?')) {
         this.success = null;
 
-        sensorsResource.put('/', this.sensor)
+        axios.put(API_BASE + '/sensors', this.sensor, {
+          headers: {
+            'Authorization': Vue.ls.get('token')
+          } })
           .then(response => {
             console.log(response);
             this.success = true;
@@ -58,7 +65,7 @@ export default Vue.extend({
 
     deleteSensor: function() {
       if (window.confirm('Are you sure you want to delete this sensor?')) {
-        sensorsResource.delete('/' + this.sensor.Id)
+        axios.delete(API_BASE + '/sensors/' + this.sensor.Id)
           .then(response => {
             console.log(response);
             this.$router.push('/dashboard/locations/' + this.$route.params.locationid + '/' + this.$route.params.nodeid);

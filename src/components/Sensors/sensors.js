@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './sensors.html';
-import { sensorsResource } from 'src/util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 
 export default Vue.extend({
   template,
@@ -12,7 +13,10 @@ export default Vue.extend({
   },
   methods: {
     getSensors: function() {
-      sensorsResource.get('/')
+      axios.get(API_BASE + '/sensors', {
+        headers: {
+          'Authorization': Vue.ls.get('token')
+        } })
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
             var sensor = response.data[i];

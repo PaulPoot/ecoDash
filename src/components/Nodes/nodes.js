@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import template from './nodes.html';
-import { nodesResource } from 'src/util/resources';
+import axios from 'axios';
+import { API_BASE } from 'src/config/constants';
 import NodesAdd from './NodesAdd/nodesAdd';
 
 export default Vue.extend({
@@ -16,7 +17,7 @@ export default Vue.extend({
   },
   methods: {
     getNodes: function() {
-      nodesResource.get('/')
+      axios.get(API_BASE + '/nodes')
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
             var node = response.data[i];
