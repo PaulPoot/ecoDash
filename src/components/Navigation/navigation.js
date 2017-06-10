@@ -14,12 +14,9 @@ export default Vue.extend({
     }
   },
   data: function() {
-    var showLoginForm = false;
-    var isRaised = false;
-
     return {
-      showLoginForm: showLoginForm,
-      isRaised: isRaised,
+      showLoginForm: false,
+      isRaised: false,
     };
   },
   methods: {

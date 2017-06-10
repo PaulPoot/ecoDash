@@ -29,10 +29,7 @@ export default Vue.extend({
   },
   methods: {
     getSensor: function() {
-      axios.get(API_BASE + '/sensors/' + this.$route.params.sensorid, {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+      axios.get(API_BASE + '/sensors/' + this.$route.params.sensorid)
         .then(response => {
           this.sensor = response.data;
         })
@@ -45,10 +42,7 @@ export default Vue.extend({
       if (window.confirm('Are you sure you want to make these changes?')) {
         this.success = null;
 
-        axios.put(API_BASE + '/sensors', this.sensor, {
-          headers: {
-            'Authorization': Vue.ls.get('token')
-          } })
+        axios.put(API_BASE + '/sensors', this.sensor)
           .then(response => {
             console.log(response);
             this.success = true;

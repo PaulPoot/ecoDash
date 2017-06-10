@@ -39,9 +39,7 @@ export default Vue.extend({
 
     deleteLocation: function() {
       if (window.confirm('Are you sure you want to delete this location?')) {
-        axios.delete(API_BASE + '/locations/' + this.location.Id, { headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+        axios.delete(API_BASE + '/locations/' + this.location.Id)
           .then(response => {
             console.log(response);
             this.$router.push('/dashboard/locations');

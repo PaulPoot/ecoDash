@@ -24,6 +24,7 @@ export default Vue.extend({
         axios.get(API_BASE + '/sensors'),
       ])
         .then(axios.spread(function(nodes, sensors) {
+          // Filter nodes on current location ID
           for (var nodeObj in nodes.data) {
             var node = nodes.data[nodeObj];
             node.sensorsFailingCount = 0;
@@ -35,15 +36,14 @@ export default Vue.extend({
             }
           }
 
+          // Count sensors for every node
           for (var sensorObj in sensors.data) {
             for (nodeObj in self.nodes) {
               var sensor = sensors.data[sensorObj];
               node = self.nodes[nodeObj];
 
               if (sensor.NodeId === node.Id) {
-                console.log('sensor found!');
                 node.sensorCount++;
-                console.log('count for node ' + node.Id + ' is now: ' + node.sensorCount);
 
                 if (sensor.Status === 2) {
                   node.sensorsFailingCount++;

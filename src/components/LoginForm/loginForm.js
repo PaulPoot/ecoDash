@@ -7,19 +7,14 @@ import axios from 'axios';
 export default Vue.extend({
   template,
   data: function() {
-    var user = {
-      username: null,
-      password: null,
-    };
-    var loginText = 'Login';
-    var loggingIn = false;
-    var error = false;
-
     return {
-      user: user,
-      loginText: loginText,
-      loggingIn: loggingIn,
-      error: error,
+      user: {
+        username: null,
+        password: null,
+      },
+      loginText: 'Login',
+      loggingIn: false,
+      error: false,
     };
   },
   methods: {
@@ -30,6 +25,7 @@ export default Vue.extend({
     loginStart: function(e) {
       this.updateButton('Logging in...', true);
 
+      // Animate in
       Velocity(e.target, {
         marginBottom: 0,
         paddingTop: '24px',
@@ -52,14 +48,16 @@ export default Vue.extend({
     },
 
     login: function(e) {
-      var expireTime = 10 * 60 * 1000; // set expiration time to 10 minutes
+      var expireTime = 600000; // set expiration time to 10 minutes in miliseconds
 
-      axios.post(API_BASE + '/Token', this.user)
+      axios.post(API_BASE + '/token', this.user)
         .then(response => {
           Vue.ls.set('token', response.data, expireTime);
+
+          // Set default authorization header to token
           axios.defaults.headers.common.Authorization = response.data;
 
-          axios.get(API_BASE + '/Users')
+          axios.get(API_BASE + '/users')
             .then(response => {
               for (var i = 0; i < response.data.length; i++) {
                 if (response.data[i].UserName === this.user.username) {
@@ -81,6 +79,7 @@ export default Vue.extend({
     handleError(self, e, error) {
       console.log(error);
 
+      // Animate out
       Velocity(e.target, 'reverse', {
         delay: 1000,
         duration: 200,

@@ -10,15 +10,19 @@
     </div>
 
     <div class="form-group">
+        <label>Name</label>
         <input id="Name" v-model="location.Name" type="text" placeholder="Name" >
     </div>
     <div class="form-group">
+        <label>Description</label>
         <textarea id="Description" v-model="location.Description" placeholder="Description"></textarea>
     </div>
     <div class="form-group">
+        <label>Latitude</label>
         <input id="Latitude" v-model="location.GeoCoordinates.Latitude" type="number" step="any" placeholder="Latitude (Optional)">
     </div>
     <div class="form-group">
+        <label>Longitude</label>
         <input id="Longitude" v-model="location.GeoCoordinates.Longitude" type="number" step="any" placeholder="Longitude (Optional)">
     </div>
 

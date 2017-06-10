@@ -15,7 +15,7 @@
     <div class="container locations item-overview">
       <div class="row" v-for="location in locations">
         <div @click="viewLocation(location)" class="col-md-3">
-          <img src="/src/assets/images/location.svg" />
+          <img v-if="!location.GeoCoordinates" src="/src/assets/images/location.svg" />
           <gmap-map v-if="location.GeoCoordinates"
             :center="{lat: location.GeoCoordinates.Latitude, lng: location.GeoCoordinates.Longitude}"
             :zoom="7"
