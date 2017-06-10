@@ -69,3 +69,15 @@ body {
 a {
   transition: $default-transition;
 }
+
+.notification-danger {
+  color: $brand-danger !important; 
+}
+
+.notification-warning {
+  color: $brand-warning !important;
+}
+
+.notification-success {
+  color: $brand-success !important;
+}

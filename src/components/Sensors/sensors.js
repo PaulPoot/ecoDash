@@ -13,10 +13,7 @@ export default Vue.extend({
   },
   methods: {
     getSensors: function() {
-      axios.get(API_BASE + '/sensors', {
-        headers: {
-          'Authorization': Vue.ls.get('token')
-        } })
+      axios.get(API_BASE + '/sensors')
         .then(response => {
           for (var i = 0; i < response.data.length; i++) {
             var sensor = response.data[i];

@@ -40,8 +40,7 @@
 
 .page-dashboard .locations {
     .row {
-        margin-top: 24px;
-        margin-bottom: 24px;
+        padding-bottom: 24px;
     }
 
     .row > div {
@@ -73,6 +72,10 @@
     padding-right: 0;
     padding-left: 0;
 
+    .row {
+        padding-bottom: 24px;
+    }
+
     .col-md {
         a:hover {
             text-decoration: none;
@@ -82,4 +85,16 @@
             color: $black;
         }
     }
+
+    img {
+        vertical-align: top;
+    }
+
+    .node-description {
+        display: inline-block;
+    }
+}
+
+.page-dashboard .sensors .row {
+    padding-bottom: 24px;
 }

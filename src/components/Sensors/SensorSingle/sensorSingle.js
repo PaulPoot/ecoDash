@@ -23,9 +23,6 @@ export default Vue.extend({
     'sensor.ProductName': function() {
       this.checkValidity();
     },
-    'sensor.Status': function() {
-      this.checkValidity();
-    },
     'sensor.Interval': function() {
       this.checkValidity();
     },
@@ -79,7 +76,6 @@ export default Vue.extend({
     checkValidity: function() {
       if (this.sensor.SensorType
       && this.sensor.ProductName
-      && this.sensor.Status
       && this.sensor.Interval) {
         this.valid = true;
       } else {

@@ -11,7 +11,6 @@ export default Vue.extend({
       valid: false,
       SensorType: null,
       ProductName: null,
-      Status: null,
       Interval: null,
     };
   },
@@ -20,9 +19,6 @@ export default Vue.extend({
       this.checkValidity();
     },
     ProductName: function() {
-      this.checkValidity();
-    },
-    Status: function() {
       this.checkValidity();
     },
     Interval: function() {
@@ -35,7 +31,6 @@ export default Vue.extend({
         NodeId: this.NodeId,
         SensorType: this.SensorType,
         ProductName: this.ProductName,
-        Status: this.Status,
         Interval: this.Interval,
       };
 
@@ -51,7 +46,6 @@ export default Vue.extend({
       if (this.NodeId
       && this.SensorType
       && this.ProductName
-      && this.Status
       && this.Interval) {
         this.valid = true;
       } else {
