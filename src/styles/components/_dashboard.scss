@@ -16,6 +16,14 @@
 
     .item-overview {
         padding: 64px 15px;
+
+        img {
+            vertical-align: top;
+        }
+    }
+
+    .item-description {
+        display: inline-block;
     }
 
     .gmnoprint,
@@ -85,16 +93,13 @@
             color: $black;
         }
     }
-
-    img {
-        vertical-align: top;
-    }
-
-    .node-description {
-        display: inline-block;
-    }
 }
 
 .page-dashboard .sensors .row {
     padding-bottom: 24px;
+    cursor: pointer;
+}
+
+.page-dashboard.single-item img {
+    vertical-align: baseline;
 }

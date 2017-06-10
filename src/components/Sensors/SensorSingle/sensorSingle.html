@@ -1,13 +1,17 @@
 <section>
   <navigation></navigation>
 
-  <div class="page-dashboard">
+  <div class="page-dashboard single-item">
     <div v-if="sensor" class="container">
       <div class="row">
         <div class="col-md-8">
           <h1>{{ sensor.SensorType }}</h1>
           <h6>{{ sensor.ProductName }}</h6>
-          <p>Status: {{ sensor.Status }} - Interval: {{ sensor.Interval }}</p>
+          <span v-if="sensor.Status === 0">Status Unknown</span>
+          <span v-if="sensor.Status === 1" class="notification-succes">Online</span>
+          <span v-if="sensor.Status === 2" class="notification-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Errors</span>
+          <span v-if="sensor.Status === 3" class="notification-danger"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Offline</span>
+          <p>Interval: {{ sensor.Interval }}</p>
         </div>
 
         <div class="col-md">

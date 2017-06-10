@@ -2,14 +2,15 @@
   <div class="row" v-if="sensors.length > 0" v-for="sensor in sensors" @click="openSensor(sensor)">
     <div class="col-md">
       <img src="/src/assets/images/sensor.svg" />
-    </div>
-    <div class="col-md">
-      <h3>{{ sensor.SensorType }}</h3>
-      <h6>{{ sensor.ProductName }}</h6>
-      <span v-if="sensor.Status === 0">Status Unknown</span>
-      <span v-if="sensor.Status === 1" class="notification-succes">Online</span>
-      <span v-if="sensor.Status === 2" class="notification-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Errors</span>
-      <span v-if="sensor.Status === 3" class="notification-danger"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Offline</span>
+
+      <div class="item-description">
+        <h3>{{ sensor.SensorType }}</h3>
+        <h6>{{ sensor.ProductName }}</h6>
+        <span v-if="sensor.Status === 0">Status Unknown</span>
+        <span v-if="sensor.Status === 1" class="notification-succes">Online</span>
+        <span v-if="sensor.Status === 2" class="notification-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Errors</span>
+        <span v-if="sensor.Status === 3" class="notification-danger"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Offline</span>
+      </div>
     </div>
   </div>
   <div v-if="sensors.length < 1">
