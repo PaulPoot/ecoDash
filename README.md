@@ -20,8 +20,6 @@ Features:
 * [Velocity](http://velocityjs.org/)
 * [Vuex](https://github.com/vuejs/vuex)
 * [Vue2 Google Maps](https://github.com/xkjyeah/vue-google-maps)
-* [Vuedals](https://github.com/javisperez/vuedals)
-* [Vue Charts](http://vue-charts.hchspersonal.tk/)
 
 <p align="center">
   <img src="http://i.imgur.com/KZ8W4uA.png" height="600" />
