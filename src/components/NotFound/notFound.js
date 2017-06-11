@@ -1,10 +1,10 @@
 import Vue from 'vue';
+import template from './notFound.html';
+import Navigation from '../Navigation/navigation';
 
 export default Vue.extend({
-  template: `
-    <div>
-        <h1 class="mb-2">Not found...</h1>
-        <p>Sorry <i class="fa fa-frown-o"></i></p>
-    </div>
-  `,
+  template,
+  components: {
+    Navigation
+  }
 });

@@ -3,12 +3,10 @@ import Vuex from 'vuex';
 import VueLocalStorage from 'vue-ls';
 import { mapGetters, mapMutations } from 'vuex';
 import VueRouter from 'vue-router';
-import { LoadingState } from 'src/config/loading-state';
-import Loader from 'components/loader/loader';
 import { store } from './util/store';
 import axios from 'axios';
 import * as VueGoogleMaps from 'vue2-google-maps';
-import { MAPS_KEY } from 'src/config/constants';
+import { LS_NAMESPACE, MAPS_KEY } from 'src/config/constants';
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -20,7 +18,7 @@ Vue.use(VueGoogleMaps, {
 
 Vue.use(Vuex);
 Vue.use(VueLocalStorage, {
-  namespace: 'vuejs__'
+  namespace: LS_NAMESPACE
 });
 Vue.use(VueRouter);
 
@@ -46,20 +44,7 @@ export const router = new VueRouter({
 new Vue({
   store,
   router,
-  components: {
-    Loader
-  },
-
-  data(){
-    return {
-      isLoading: false
-    };
-  },
-
   created(){
-    LoadingState.$on('toggle', (isLoading) => {
-      this.isLoading = isLoading;
-    });
     axios.defaults.headers.common.Authorization = Vue.ls.get('token');
   }
 }).$mount('#app');
